@@ -84,3 +84,8 @@
 // title.style.fontSize = '60px';
 
 // title.style.margin = '';
+
+const content = document.querySelector('p');
+
+console.log(content.classList);
+
