@@ -89,3 +89,6 @@ const content = document.querySelector('p');
 
 console.log(content.classList);
 
+content.classList.remove('error');
+
+content.classList.add('success');
