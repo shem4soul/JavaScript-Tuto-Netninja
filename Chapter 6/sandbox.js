@@ -155,7 +155,8 @@ button.addEventListener('click', () => {
     //  ul.innerHTML += '<li> something new </li>';
     const li = document.createElement('li');
     li.textContent = 'something new to do';
-    ul.append(li);
+    // ul.append(li);
+    ul.prepend(li);
 })
 
 
