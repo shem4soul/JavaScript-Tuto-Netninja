@@ -94,20 +94,45 @@
 // content.classList.add('success');
 
 
-const paras = document.querySelectorAll('p');
+// const paras = document.querySelectorAll('p');
 
-paras.forEach(p => {
-    if (p.textContent.includes('error')) {
-        p.classList.add('error');
-    }
-      if (p.textContent.includes("success")) {
-        p.classList.add("success");
-      }
-})
+// paras.forEach(p => {
+//     if (p.textContent.includes('error')) {
+//         p.classList.add('error');
+//     }
+//       if (p.textContent.includes("success")) {
+//         p.classList.add("success");
+//       }
+// })
 
 
-const title = document.querySelector('.title');
+// const title = document.querySelector('.title');
 
-title.classList.toggle('test');
+// title.classList.toggle('test');
 
-title.classList.toggle("test");
+// title.classList.toggle("test");
+
+
+
+
+const article = document.querySelector('article');
+
+// console.log(article.children);
+// console.log(Array.from(article.children));
+// console.log(article.children);
+
+
+// Array.from(article.children).forEach(child => {
+//     child.classList.add('article-element')
+// });
+
+const title = document.querySelector('h2');
+
+console.log(title.parentElement);
+
+console.log(title.parentElement.parentElement);
+console.log(title.nextElementSibling);
+console.log(title.previousElementSibling);
+
+//chaining
+console.log((title.nextElementSibling.parentElement.children));
