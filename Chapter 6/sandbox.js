@@ -160,21 +160,24 @@ button.addEventListener('click', () => {
 })
 
 
-const items = document.querySelectorAll('li');
+// const items = document.querySelectorAll('li');
 
-items.forEach(item => {
-    item.addEventListener('click', (e) => {
-        console.log('event in LI');
-        // console.log(e);
-        // console.log(e.target);
-        // e.target.style.textDecoration = 'line-through';
-        e.stopPropagation();
-        e.target.remove();
-    });
-});
+// items.forEach(item => {
+//     item.addEventListener('click', (e) => {
+//         console.log('event in LI');
+//         // console.log(e);
+//         // console.log(e.target);
+//         // e.target.style.textDecoration = 'line-through';
+//         e.stopPropagation();
+//         e.target.remove();
+//     });
+// });
 
 
 ul.addEventListener('click', e => {
-    console.log('event in UL');
-    
+    // console.log('event in UL');
+    // console.log(e.target);
+    if (e.target.tagName === 'LI') {
+        e.target.remove();
+    }
 })
