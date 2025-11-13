@@ -146,6 +146,10 @@
 // })
 
 
+const ul = document.querySelector('ul');
+// ul.remove();
+
+
 const items = document.querySelectorAll('li');
 
 items.forEach(item => {
@@ -153,6 +157,7 @@ items.forEach(item => {
         // console.log('item clicked');
         // console.log(e);
         // console.log(e.target);
-        e.target.style.textDecoration = 'line-through';
+        // e.target.style.textDecoration = 'line-through';
+        e.target.remove();
     })
 })
