@@ -31,26 +31,42 @@
 // let result = username.search(pattern);
 // console.log(result);
 
+const form = document.querySelector(".signup-form");
+const feedback = document.querySelector(".feedback");
 
+const usernamePattern = /^[a-z]{6,12}$/;
 
-const form = document.querySelector('.signup-form');
-
-const feedback = document.querySelector('.feedback');
-
-
+// Submit validation
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // validation
-  const username = form.username.value;
-  const usernamePattern = /^[a-z]{6,12}$/;
+  const username = form.username.value.trim();
+
+  console.log("Submitted username:", username);
+  console.log("Submit validation result:", usernamePattern.test(username));
 
   if (usernamePattern.test(username)) {
-    //feedback good info
-    feedback.textContent = "that username is valid!";
+    feedback.textContent = "That username is valid!";
+    feedback.style.color = "green";
   } else {
-    //feedback help info
     feedback.textContent =
-      "username must contain letter only and must be between 6-12";
+      "Username must contain lowercase letters only and be 6–12 characters long.";
+    feedback.style.color = "red";
+  }
+});
+
+// Live feedback
+form.username.addEventListener("keyup", (e) => {
+  const value = e.target.value.trim();
+  const isValid = usernamePattern.test(value);
+
+  console.log("Typed:", value, "| Valid:", isValid);
+
+  if (isValid) {
+    form.username.classList.add("success");
+    form.username.classList.remove("error");
+  } else {
+    form.username.classList.add("error");
+    form.username.classList.remove("success");
   }
 });
