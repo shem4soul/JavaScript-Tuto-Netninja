@@ -31,42 +31,38 @@
 // let result = username.search(pattern);
 // console.log(result);
 
+
+
 const form = document.querySelector(".signup-form");
-const feedback = document.querySelector(".feedback");
+const feedback = document.querySelector(".feedback")
 
-const usernamePattern = /^[a-z]{6,12}$/;
+  //validation
+  const username = form.username.value;
+  const usernamePattern = /^[a-zA-Z]{6,12}$/;
 
-// Submit validation
+
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const username = form.username.value.trim();
-
-  console.log("Submitted username:", username);
-  console.log("Submit validation result:", usernamePattern.test(username));
 
   if (usernamePattern.test(username)) {
-    feedback.textContent = "That username is valid!";
-    feedback.style.color = "green";
+    //feedback good info
+    feedback.textContent = 'that username is valid' 
   } else {
-    feedback.textContent =
-      "Username must contain lowercase letters only and be 6–12 characters long.";
-    feedback.style.color = "red";
+    //feedback help info
+    feedback.textContent = 'username must contain letters only and be between 6 and 12 characters long'
   }
+
 });
 
-// Live feedback
-form.username.addEventListener("keyup", (e) => {
-  const value = e.target.value.trim();
-  const isValid = usernamePattern.test(value);
-
-  console.log("Typed:", value, "| Valid:", isValid);
-
-  if (isValid) {
-    form.username.classList.add("success");
-    form.username.classList.remove("error");
+//live feedback
+form.username.addEventListener('keyup', e => {
+  if (usernamePattern.test(e.target.value)) {
+      form.username.setAttribute('class', 'success');
   } else {
-    form.username.classList.add("error");
-    form.username.classList.remove("success");
+       form.username.setAttribute("class", "error");
   }
-});
+})
+
+
