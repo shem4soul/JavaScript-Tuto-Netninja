@@ -87,3 +87,12 @@ const prices = [20, 10, 30, 25, 15, 40, 80, 5];
 // //     return acc;
 // // }, 0);
 // // console.log(marioScores);
+
+
+
+// Find
+const money = [20,50,60,40,50,20,30];
+const firstHighMoney = money.find((x) => {
+    return x > 50;
+});;
+console.log(firstHighMoney);
