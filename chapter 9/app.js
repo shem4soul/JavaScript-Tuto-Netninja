@@ -118,3 +118,14 @@ console.log(nums);
 scores.sort((a,b) => {
     return b.score - a.score;// +1 if b is to be returned, -1 if a, 0 if equal
 });
+
+
+const scores = [
+  { name: "mario", score: 20 },
+  { name: "chun-li", score: 40 },
+  { name: "mario", score: 20 },
+  { name: "chun-li", score: 40 },
+];
+
+scores.sort((a, b) => b.score - a.score);
+console.log(scores);
