@@ -7,13 +7,27 @@ class User {
     this.email = email;
     this.score = 0;
   }
+  login() {
+    console.log(`${this.username} just logged in`);
+    return this;
+  }
+  logout() {
+    console.log(`${this.username} just logged out`);
+    return this;
+  }
+  incrementScore() {
+    this.score += 1;
+    console.log(`${this.username} has a score of ${this.score}`);
+    return this;
+  }
 }
 
 const userOne = new User("johnDoe", "johnDoe@gmail.com");
 const userTwo = new User("janeDoe", "janeDoe@fastermail.com");
 
-console.log(userOne);
-console.log(userTwo);
+console.log(userOne, userTwo);
+
+userOne.login().incrementScore().incrementScore().logout();
 
 //the 'new' keyword does the following:
 //1. creates a new empty object {}
