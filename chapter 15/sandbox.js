@@ -22,12 +22,27 @@ class User {
   }
 }
 
+class Admin extends User {
+  deleteUser(user) {
+    users = users.filter((u) => u.username !== user.username);
+  }
+}
+
 const userOne = new User("johnDoe", "johnDoe@gmail.com");
 const userTwo = new User("janeDoe", "janeDoe@fastermail.com");
+const userThree = new Admin("adminUser", "adminuser@gmail.com");
 
-console.log(userOne, userTwo);
+let users = [userOne, userTwo, userThree];
+console.log(users);
 
-userOne.login().incrementScore().incrementScore().logout();
+userThree.deleteUser(userTwo);
+console.log(users);
+
+userOne.deleteUser(userTwo); //error because userOne is not an admin
+
+// console.log(userOne, userTwo);
+
+// userOne.login().incrementScore().incrementScore().logout();
 
 //the 'new' keyword does the following:
 //1. creates a new empty object {}
