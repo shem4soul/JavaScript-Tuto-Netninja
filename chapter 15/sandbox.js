@@ -5,6 +5,7 @@ class User {
     //set properties
     this.username = username;
     this.email = email;
+    this.score = 0;
   }
 }
 
