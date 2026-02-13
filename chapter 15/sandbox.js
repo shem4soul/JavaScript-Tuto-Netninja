@@ -1,5 +1,5 @@
 //class constructor
-
+// new constructor function syntax
 class User {
   constructor(username, email) {
     //set properties
