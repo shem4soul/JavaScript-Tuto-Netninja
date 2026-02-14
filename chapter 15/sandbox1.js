@@ -14,8 +14,22 @@ User.prototype.logout = function () {
   return this;
 };
 
+function Admin(username, email, title) {
+  User.call(this, username, email);
+  this.title = title;
+}
+
+Admin.prototype = Object.create(User.prototype);
+
+Admin.prototype.deleteUser = function (user) {
+  //delete user from users array
+  users = users.filter((u) => u.username !== user.username);
+};
+
 const userOne = new User("johnDoe", "johndoe@gmail.com");
 const userTwo = new User("janeDoe", "janedoe@yahoomail.com");
-console.log(userOne, userTwo);
+const userThree = new Admin("adminUser", "shem4soul@gmail.com", "black-belt");
+
+console.log(userOne, userTwo, userThree);
 
 userOne.login().logout();
